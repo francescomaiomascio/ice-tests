@@ -8,6 +8,7 @@ addopts = "-ra"
 testpaths = ["domains", "aggregates", "core", "products"]
 markers = [
   "unit: unit-level tests",
+  "domain: domain-level invariant tests",
   "integration: integration-level tests",
   "contract: contract tests",
   "e2e: end-to-end tests",
@@ -15,3 +16,6 @@ markers = [
   "core: ICE core platform tests",
   "product: product-level tests"
 ]
+
+[tool.setuptools]
+packages = []

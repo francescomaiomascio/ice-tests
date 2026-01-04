@@ -7,6 +7,15 @@ It defines **what ICE is allowed to be**.
 
 ---
 
+## ⚠️ IMPORTANT
+
+This repository is NOT a Python package.
+
+Do NOT run:
+    pip install -e .
+
+This repo is a test harness and is meant to be executed via pytest only.
+
 ## Purpose
 
 ICE is a modular cognitive platform composed of multiple domains, aggregates, and products.
