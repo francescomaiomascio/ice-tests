@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra"
+testpaths = ["domains", "aggregates", "core", "products"]
+markers = [
+  "unit: unit-level tests",
+  "integration: integration-level tests",
+  "contract: contract tests",
+  "e2e: end-to-end tests",
+  "scenario: scenario-based tests",
+  "core: ICE core platform tests",
+  "product: product-level tests"
+]

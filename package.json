@@ -1,0 +1,15 @@
+{
+  "name": "ice-tests",
+  "private": true,
+  "description": "Canonical test authority for the ICE ecosystem",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test:frontend": "echo \"frontend tests not yet enabled\"",
+    "lint": "echo \"linting not yet enabled\""
+  },
+  "devDependencies": {
+    "playwright": "^1.42.0",
+    "vitest": "^1.3.0"
+  }
+}
