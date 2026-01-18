@@ -1,17 +1,20 @@
 # ICE Tests
+## Canonical Validation Authority of the ICE Ecosystem
 
-ICE Tests is the **canonical validation authority** for the ICE ecosystem.
+ICE Tests is the **validation authority** of the ICE ecosystem.
 
-This repository does not simply test code.  
-It defines the **structural, semantic, and cognitive constraints** that ICE must obey over time.
+This repository does not merely test implementations.
+It defines and enforces the **structural, semantic, and cognitive constraints**
+that ICE must obey over time.
 
-ICE Tests is where ICE is *proven*, not just exercised.
+ICE Tests is where ICE is **proven**,
+not just exercised.
 
 ---
 
-## ⚠️ Important Notice
+## Important Notice
 
-This repository is **not** a Python package.
+ICE Tests is **not** a distributable package.
 
 Do **not** run:
 
@@ -19,136 +22,176 @@ Do **not** run:
 pip install -e .
 ```
 
-ICE Tests is a test harness, not a distributable library.
+ICE Tests is a validation harness.
 
-It is executed exclusively via `pytest` and consumes the real ICE packages installed in the active environment.
+It is executed exclusively via pytest
+and consumes the real ICE packages installed
+in the active environment.
 
-Attempting to install this repository is considered a configuration error by design.
+Attempting to install this repository
+is considered a configuration error by design.
 
----
+Purpose
 
-## Purpose
+ICE is a modular system composed of:
 
-ICE is a modular cognitive platform composed of multiple independent domains, cooperative subsystems, and user-facing products.
+independent domains
+
+cooperative subsystems
+
+user-facing products
+
+long-running executions
 
 ICE Tests exists to preserve:
 
-- **architectural intent**
-- **semantic invariants**
-- **cross-domain correctness**
-- **long-term system identity**
+architectural intent
 
-as the ICE ecosystem evolves.
+semantic invariants
 
-This repository acts as the **single source of truth** for validating whether ICE still *is* ICE.
+cross-domain correctness
 
----
+long-term system identity
 
-## Scope of Authority
+As ICE evolves,
+this repository ensures it does not drift.
+
+Scope of Authority
 
 ICE Tests is authoritative over:
 
-- domain-level correctness
-- cross-domain interaction rules
-- platform-level invariants
-- product-level guarantees
+domain-level correctness
 
-**If a behavior is not validated here, it is not guaranteed by ICE.**
+cross-domain interaction rules
 
----
+platform-level invariants
 
-## What This Repository Is
+product-level guarantees
 
-- A semantic contract for ICE behavior
-- A governance layer over system evolution
-- A guardrail against architectural drift
-- A validation framework for refactoring at scale
+If a behavior is not validated here, it is not guaranteed by ICE.
 
-ICE Tests allows ICE to **change without losing coherence**.
+Documentation may explain.
+Code may execute.
 
----
+Tests decide what is acceptable.
 
-## What This Repository Is Not
+What This Repository Is
 
-- Not a mirror of production repositories
-- Not a collection of ad-hoc tests
-- Not a playground for experiments
-- Not a substitute for runtime monitoring
+ICE Tests is:
 
-Tests here are **intentional, declarative, and durable**.
+a semantic contract for ICE behavior
 
----
+a governance mechanism over system evolution
 
-## Test Topology
+a guardrail against architectural erosion
 
-ICE Tests is organized into four strictly separated validation layers:
+a validation framework for large-scale refactoring
 
-1. **`domains/`**  
-   Isolated responsibility and local invariants
+ICE Tests allows ICE to change
+without losing its identity.
 
-2. **`aggregates/`**  
-   Cooperative subsystems spanning multiple domains
+What This Repository Is Not
 
-3. **`core/`**  
-   ICE as a platform-level cognitive system
+ICE Tests is not:
 
-4. **`products/`**  
-   User-facing applications built on top of ICE
+a mirror of production repositories
+
+a collection of ad-hoc tests
+
+a playground for experiments
+
+a substitute for observability or monitoring
+
+Tests here are:
+
+intentional
+
+declarative
+
+durable
+
+Convenience is not a goal.
+
+Test Topology
+
+ICE Tests is organized into four strictly separated layers:
+
+domains/
+Local responsibility and isolated invariants
+
+aggregates/
+Cooperative subsystems spanning multiple domains
+
+core/
+ICE as a platform-level cognitive system
+
+products/
+User-facing applications built on top of ICE
+
+Crossing layers within a single test
+is explicitly forbidden.
 
 Each layer answers a different class of questions.
 
-**Crossing layers inside a single test is explicitly forbidden.**
+Design Principles
 
----
+Structure precedes implementation
 
-## Design Principles
+Semantics precede behavior
 
-- **Structure precedes implementation**
-- **Semantics precede behavior**
-- **Invariants precede features**
-- **Tests define truth, not convenience**
+Invariants precede features
 
-**If a test fails, the code is wrong — not the test.**
+Tests define truth, not convenience
 
----
+If a test fails, the code is wrong — not the test.
 
-## Current Status
+Current Status
 
-This repository is intentionally initialized with minimal executable tests.
+This repository is intentionally initialized
+with minimal executable tests.
 
 At this stage:
 
-- structure is finalized
-- semantics are defined
-- invariants are being formalized
+structure is finalized
 
-Test implementations are introduced **incrementally**, starting from domain-level contracts, then expanding outward.
+semantics are defined
 
----
+invariants are formalized
 
-## Entry Points
+Test implementations are introduced incrementally,
+starting from domain contracts
+and expanding outward.
 
-### Documentation
+Entry Points
+Documentation
 
-- `docs/philosophy.md` — testing philosophy and intent
-- `docs/test-levels.md` — definition of validation layers
-- `docs/domain-boundaries.md` — what is tested where (and why)
+docs/philosophy.md — testing philosophy
 
-### Execution
+docs/test-levels.md — validation layers
 
-- `scripts/run_domain.sh`
-- `scripts/run_aggregate.sh`
-- `scripts/run_core.sh`
-- `scripts/run_product.sh`
+docs/domain-boundaries.md — what is tested where (and why)
+
+Execution
+
+scripts/run_domain.sh
+
+scripts/run_aggregate.sh
+
+scripts/run_core.sh
+
+scripts/run_product.sh
 
 These scripts define the supported execution paths.
 
-Direct invocation outside these paths is discouraged.
+Direct invocation outside these paths
+is discouraged.
 
----
+Canonical Status
 
-## Final Note
+ICE Tests is normative.
 
-**If ICE Tests becomes unclear, ICE itself has lost definition.**
+If ICE Tests becomes unclear,
+ICE itself has lost definition.
 
-This repository exists to ensure that never happens.
+This repository exists
+to ensure that never happens.
